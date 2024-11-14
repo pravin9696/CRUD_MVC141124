@@ -1,0 +1,19 @@
+﻿@model CRUD_MVC141124.Models.tblEmployee
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Employee Information</h2>
+@using (Html.BeginForm("Edit","Default",FormMethod.Post))
+{
+    <table>
+        <tr><td>@Html.LabelFor(x => x.ID) </td><td>@Html.TextBoxFor(x => x.ID)</td><td>@Html.ValidationMessageFor(x=>x.ID)</td> </tr>
+
+        <tr><td>@Html.LabelFor(x => x.name)</td><td>@Html.TextBoxFor(x => x.name) </td><td>@Html.ValidationMessageFor(x=>x.name)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.salary)</td><td>@Html.TextBoxFor(x => x.salary) </td><td>@Html.ValidationMessageFor(x => x.salary)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.city)</td><td>@Html.TextBoxFor(x => x.city) </td><td>@Html.ValidationMessageFor(x => x.city)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.Address)</td><td>@Html.TextBoxFor(x => x.Address) </td><td>@Html.ValidationMessageFor(x => x.Address)</td></tr>
+        <tr><td colspan="2"><input type="submit" value="Submit" /></td></tr>
+    </table>
+}
+
