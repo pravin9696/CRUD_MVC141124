@@ -11,20 +11,13 @@ namespace CRUD_MVC141124.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class tblEmployee
     {
-        [Required]
         public int ID { get; set; }
-        [Required(ErrorMessage ="Employee Name is required")]
         public string name { get; set; }
-        [Required]
-        [Range(minimum:10000,maximum:100000)]
         public Nullable<decimal> salary { get; set; }
-        [Required]
         public string Address { get; set; }
-        [Required]
         public Nullable<int> city { get; set; }
     }
 }

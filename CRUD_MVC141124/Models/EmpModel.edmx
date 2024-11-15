@@ -4,14 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EmpDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="tblCities">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="city" Type="nvarchar" MaxLength="50" />
-        </EntityType>
+    <Schema Namespace="EmpDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'EmpDB.dbo.tblDept' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblDept">
@@ -35,7 +28,6 @@ warning 6002: The table/view 'EmpDB.dbo.tblDept' does not have a primary key def
           <Property Name="city" Type="int" />
         </EntityType>
         <EntityContainer Name="EmpDBModelStoreContainer">
-          <EntitySet Name="tblCities" EntityType="Self.tblCities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblDept" EntityType="Self.tblDept" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -45,18 +37,10 @@ warning 6002: The table/view 'EmpDB.dbo.tblDept' does not have a primary key def
     FROM [dbo].[tblDept] AS [tblDept]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmpDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="tblCity">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="tblEmployee">
           <Key>
             <PropertyRef Name="ID" />
@@ -78,7 +62,6 @@ warning 6002: The table/view 'EmpDB.dbo.tblDept' does not have a primary key def
           <Property Name="description1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="EmpDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblCities" EntityType="Self.tblCity" />
           <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
           <EntitySet Name="tblDepts" EntityType="Self.tblDept" />
         </EntityContainer>
@@ -88,14 +71,6 @@ warning 6002: The table/view 'EmpDB.dbo.tblDept' does not have a primary key def
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EmpDBModelStoreContainer" CdmEntityContainer="EmpDBEntities">
-          <EntitySetMapping Name="tblCities">
-            <EntityTypeMapping TypeName="EmpDBModel.tblCity">
-              <MappingFragment StoreEntitySet="tblCities">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="city" ColumnName="city" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblEmployees">
             <EntityTypeMapping TypeName="EmpDBModel.tblEmployee">
               <MappingFragment StoreEntitySet="tblEmployee">

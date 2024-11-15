@@ -1,0 +1,17 @@
+﻿@model CRUD_MVC141124.Models.validations.validationEmployee
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+    <table>
+        <tr><td>@Html.LabelFor(x => x.ID)</td><td>@Html.EditorFor(x => x.ID)</td><td>@Html.ValidationMessageFor(x => x.ID)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.name)</td><td>@Html.EditorFor(x => x.name)</td><td>@Html.ValidationMessageFor(x => x.name)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.salary)</td><td>@Html.EditorFor(x => x.salary)</td><td>@Html.ValidationMessageFor(x => x.salary)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.Address)</td><td>@Html.EditorFor(x => x.Address)</td><td>@Html.ValidationMessageFor(x => x.Address)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.city)</td><td>@Html.EditorFor(x => x.city)</td><td>@Html.ValidationMessageFor(x => x.city)</td></tr>
+        <tr><td colspan="3"><input type="submit" value="submit" /></td></tr>
+    </table>
+}

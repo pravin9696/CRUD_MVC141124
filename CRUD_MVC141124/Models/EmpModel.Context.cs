@@ -25,7 +25,6 @@ namespace CRUD_MVC141124.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<tblCity> tblCities { get; set; }
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
         public virtual DbSet<tblDept> tblDepts { get; set; }
     }

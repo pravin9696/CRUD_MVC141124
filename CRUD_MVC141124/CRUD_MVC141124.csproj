@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -132,15 +133,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmpModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblCity.cs">
-      <DependentUpon>EmpModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblDept.cs">
       <DependentUpon>EmpModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployee.cs">
       <DependentUpon>EmpModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\validations\nameValidationClass.cs" />
+    <Compile Include="Models\validations\validationEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +158,9 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\Edit.cshtml" />
     <Content Include="PPT\Validation in MVC5.pptx" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
